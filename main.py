@@ -386,7 +386,9 @@ def test():
     
 def float_to_filename(num):
     split_result = str(num).split('.')
-    if split_result[1] == '0':
+    if split_result[0] == '0' and split_result[1] == '0':
+        return '00'
+    elif split_result[1] == '0':
         return split_result[0]
     else:
         return ''.join(split_result)
